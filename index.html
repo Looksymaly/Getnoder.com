@@ -102,6 +102,7 @@
     <div class="button-container">
         <button onclick="openLoadstringPage()">Copy Loadstring</button>
         <button onclick="openSourcePage()">Open Source</button>
+        <button onclick="openCreditsPage()">Credits</button> <!-- New Credits Button -->
     </div>
 
     <div id="loadstring">Noder 1.0 (Beta)</div>
@@ -118,22 +119,22 @@
 
     <script>
         function openLoadstringPage() {
-            // Redirect to the external loadstring page
             window.location.href = 'https://noderloadstring.netlify.app/';
         }
 
         function openSourcePage() {
-            // Opens the source code page
             window.location.href = 'https://nodersource.netlify.app/';
         }
 
+        function openCreditsPage() {
+            window.location.href = ''; // Replace with the actual credits page URL
+        }
+
         function learnMore() {
-            // Redirect to the Learn More page
             window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
         }
 
         function joinDiscord() {
-            // Redirect to the Discord server
             window.location.href = 'https://discord.gg/ErmQQwzGjV';
         }
     </script>
