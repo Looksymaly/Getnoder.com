@@ -12,7 +12,7 @@
             color: white;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -37,6 +37,26 @@
             background-color: gray;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 100px; /* Adjust size */
+            height: 100px; /* Adjust size */
+            border-radius: 10px; /* Rounded corners */
+            margin-right: 20px; /* Space between button and image */
+        }
+
         div {
             font-size: 20px;
             font-weight: 900;
@@ -47,9 +67,18 @@
     </style>
 </head>
 <body>
-    <button onclick="copyLoadstring()">Copy Loadstring</button>
-    <button onclick="openSource()">Open Source</button>
+    <div class="button-container">
+        <button onclick="copyLoadstring()">Copy Loadstring</button>
+        <button onclick="openSource()">Open Source</button>
+    </div>
+
     <div id="loadstring">Noder 1.0 (Beta)</div>
+
+    <div class="image-container">
+        <button onclick="downloadSource()">Download</button>
+        <img src="C:/Users/SQUID/Desktop/File/Icon.png" alt="Icon" />
+        <span>image:</span>
+    </div>
 
     <script>
         // This is the code that gets copied when the "Copy Loadstring" button is clicked
@@ -79,6 +108,12 @@
                     URL.revokeObjectURL(link.href);
                 })
                 .catch(error => console.error("Download error:", error));
+        }
+
+        function downloadSource() {
+            // Just a placeholder for the download action
+            let sourceUrl = "https://raw.githubusercontent.com/Looksymaly/getnoder/main/Source.lua";
+            window.location.href = sourceUrl; // This will prompt the user to download the file
         }
     </script>
 </body>
