@@ -62,7 +62,13 @@
         }
 
         function openSource() {
-            window.open("source.txt", "_blank");
+            let sourceUrl = "https://raw.githubusercontent.com/yourusername/repository/main/OpenSource.txt";
+            let link = document.createElement('a');
+            link.href = sourceUrl;
+            link.download = 'OpenSource.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
