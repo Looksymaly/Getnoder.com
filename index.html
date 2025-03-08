@@ -62,20 +62,22 @@
         }
 
         function openSource() {
-            let sourceUrl = "https://raw.githubusercontent.com/Looksymaly/getnoder/main/Opensource.txt";
-            
-            fetch(sourceUrl)
-                .then(response => response.blob())
-                .then(blob => {
-                    let link = document.createElement('a');
-                    link.href = URL.createObjectURL(blob);
-                    link.download = 'OpenSource.txt';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                })
-                .catch(error => console.error("Download error:", error));
-        }
+    let sourceUrl = "https://raw.githubusercontent.com/Looksymaly/getnoder/main/Source.lua";
+    
+    fetch(sourceUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const file = new Blob([blob], { type: "application/octet-stream" }); // Ensures binary download
+            let link = document.createElement('a');
+            link.href = URL.createObjectURL(file);
+            link.download = 'Source.lua';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href); // Clean up memory
+        })
+        .catch(error => console.error("Download error:", error));
+}
     </script>
 </body>
 </html>
