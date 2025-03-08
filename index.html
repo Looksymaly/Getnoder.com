@@ -12,61 +12,92 @@
             color: white;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: 900;
         }
 
         button {
             font-size: 16px;
             font-weight: 900;
             margin: 10px;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 10px;
             background-color: rgb(30, 30, 30);
             color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         button:hover {
-            background-color: gray;
+            background-color: #555;
+            transform: scale(1.05);
         }
 
         .button-container {
             display: flex;
-            justify-content: flex-start;
-            width: 100%;
-            padding: 10px;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
         }
 
         .image-container {
             display: flex;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .image-container img {
-            width: 100px; /* Adjust size */
-            height: 100px; /* Adjust size */
-            border-radius: 10px; /* Rounded corners */
+            width: 120px; /* Adjust size */
+            height: 120px; /* Adjust size */
+            border-radius: 15px; /* Rounded corners */
             margin-right: 20px; /* Space between button and image */
         }
 
-        div {
+        .image-container span {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgb(200, 200, 200);
+        }
+
+        #loadstring {
             font-size: 20px;
-            font-weight: 900;
-            max-width: 80%;
-            word-wrap: break-word;
+            font-weight: 700;
+            color: #b3b3b3;
             margin-top: 20px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .image-container img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .button-container {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <h1>Welcome to Noder 1.0</h1>
+
     <div class="button-container">
         <button onclick="openLoadstringPage()">Copy Loadstring</button>
         <button onclick="openSourcePage()">Open Source</button>
@@ -82,21 +113,21 @@
     </div>
 
     <script>
-     function openLoadstringPage() {
-         // Redirect to the external loadstring page
-         window.location.href = 'https://looksymaly.github.io/Getnoder.xyz/loadstringpage.html';
-     }
+        function openLoadstringPage() {
+            // Redirect to the external loadstring page
+            window.location.href = 'https://looksymaly.github.io/Getnoder.xyz/loadstringpage.html';
+        }
 
-     function openSourcePage() {
-         // Opens the source code page
-         window.open('https://looksymaly.github.io/Getnoder.xyz/sourcePage.html', '_blank');
-     }
+        function openSourcePage() {
+            // Opens the source code page
+            window.open('https://looksymaly.github.io/Getnoder.xyz/sourcePage.html', '_blank');
+        }
 
-     function learnMore() {
-         // Redirect to the Learn More page
-         window.location.href = 'https://grand-babka-705b8d.netlify.app/';
-     }
-</script>
+        function learnMore() {
+            // Redirect to the Learn More page
+            window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
+        }
+    </script>
 
 </body>
 </html>
