@@ -52,10 +52,24 @@
             margin-bottom: 30px;
         }
 
-        .action-buttons {
+        .image-container {
             display: flex;
-            flex-direction: column;
-            margin-top: 20px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin-right: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adding shadow */
+        }
+
+        .image-container span {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgb(200, 200, 200);
         }
 
         #loadstring {
@@ -69,6 +83,11 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 28px;
+            }
+
+            .image-container img {
+                width: 80px;
+                height: 80px;
             }
 
             .button-container {
@@ -87,8 +106,13 @@
 
     <div id="loadstring">Noder 1.0 (Beta)</div>
 
-    <div class="action-buttons">
+    <div class="image-container">
         <button onclick="learnMore()">Learn More!</button>
+        <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" />
+        <span>Discord</span>
+    </div>
+
+    <div class="action-buttons">
         <button onclick="joinDiscord()">Join Discord</button>
     </div>
 
@@ -100,7 +124,7 @@
 
         function openSourcePage() {
             // Opens the source code page
-            window.location.href = 'https://noderloadstring.netlify.app/';
+            window.location.href = 'https://nodersource.netlify.app/';
         }
 
         function learnMore() {
