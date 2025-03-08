@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loadstring Display</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+        
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        div {
+            font-size: 20px; /* Larger size for emphasis */
+            font-weight: 900; /* Extra bold */
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Looksymaly/Loadstring-for-noder/refs/heads/main/myloadstring.lua"))()
+    </div>
+</body>
+</html>
