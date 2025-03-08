@@ -49,12 +49,14 @@
 <body>
     <button onclick="copyLoadstring()">Copy Loadstring</button>
     <button onclick="openSource()">Open Source</button>
-    <div id="loadstring">loadstring(game:HttpGet("https://raw.githubusercontent.com/Looksymaly/Loadstring-for-noder/refs/heads/main/myloadstring.lua"))()</div>
+    <div id="loadstring">Noder 1.0 (Beta)</div>
 
     <script>
+        // This is the code that gets copied when the "Copy Loadstring" button is clicked
+        const loadstringCode = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Looksymaly/Loadstring-for-noder/refs/heads/main/myloadstring.lua"))()';
+
         function copyLoadstring() {
-            const text = document.getElementById("loadstring").innerText;
-            navigator.clipboard.writeText(text).then(() => {
+            navigator.clipboard.writeText(loadstringCode).then(() => {
                 alert("Loadstring copied to clipboard!");
             }).catch(err => {
                 console.error("Error copying text: ", err);
@@ -62,22 +64,22 @@
         }
 
         function openSource() {
-    let sourceUrl = "https://raw.githubusercontent.com/Looksymaly/getnoder/main/Source.lua";
-    
-    fetch(sourceUrl)
-        .then(response => response.blob())
-        .then(blob => {
-            const file = new Blob([blob], { type: "application/octet-stream" }); // Ensures binary download
-            let link = document.createElement('a');
-            link.href = URL.createObjectURL(file);
-            link.download = 'Source.lua';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href); // Clean up memory
-        })
-        .catch(error => console.error("Download error:", error));
-}
+            let sourceUrl = "https://raw.githubusercontent.com/Looksymaly/getnoder/main/Source.lua";
+            
+            fetch(sourceUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    const file = new Blob([blob], { type: "application/octet-stream" });
+                    let link = document.createElement('a');
+                    link.href = URL.createObjectURL(file);
+                    link.download = 'Source.lua';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(link.href);
+                })
+                .catch(error => console.error("Download error:", error));
+        }
     </script>
 </body>
 </html>
