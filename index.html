@@ -65,12 +65,6 @@
             margin-right: 20px; /* Space between button and image */
         }
 
-        .image-container span {
-            font-size: 18px;
-            font-weight: 700;
-            color: rgb(200, 200, 200);
-        }
-
         #loadstring {
             font-size: 20px;
             font-weight: 700;
@@ -106,10 +100,9 @@
     <div id="loadstring">Noder 1.0 (Beta)</div>
 
     <div class="image-container">
-        <button onclick="learnMore()">Learn more!</button>
+        <button onclick="joinDiscord()">Join our Discord!</button>
         <!-- Image from GitHub repository -->
         <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" />
-        <span>image:</span>
     </div>
 
     <script>
@@ -123,9 +116,9 @@
             window.location.href = 'https://noderloadstring.netlify.app/';
         }
 
-        function learnMore() {
-            // Redirect to the Learn More page
-            window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
+        function joinDiscord() {
+            // Redirect to the Discord server invite link
+            window.location.href = 'https://discord.gg/ErmQQwzGjV';  // Replace with your actual Discord invite link
         }
     </script>
 
