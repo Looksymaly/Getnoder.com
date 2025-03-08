@@ -52,17 +52,10 @@
             margin-bottom: 30px;
         }
 
-        .image-container {
+        .action-buttons {
             display: flex;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .image-container img {
-            width: 120px; /* Adjust size */
-            height: 120px; /* Adjust size */
-            border-radius: 15px; /* Rounded corners */
-            margin-right: 20px; /* Space between button and image */
+            flex-direction: column;
+            margin-top: 20px;
         }
 
         #loadstring {
@@ -76,11 +69,6 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 28px;
-            }
-
-            .image-container img {
-                width: 80px;
-                height: 80px;
             }
 
             .button-container {
@@ -99,10 +87,9 @@
 
     <div id="loadstring">Noder 1.0 (Beta)</div>
 
-    <div class="image-container">
-        <button onclick="joinDiscord()">Join our Discord!</button>
-        <!-- Image from GitHub repository -->
-        <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" />
+    <div class="action-buttons">
+        <button onclick="learnMore()">Learn More!</button>
+        <button onclick="joinDiscord()">Join Discord</button>
     </div>
 
     <script>
@@ -116,9 +103,14 @@
             window.location.href = 'https://noderloadstring.netlify.app/';
         }
 
+        function learnMore() {
+            // Redirect to the Learn More page
+            window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
+        }
+
         function joinDiscord() {
-            // Redirect to the Discord server invite link
-            window.location.href = 'https://discord.gg/ErmQQwzGjV';  // Replace with your actual Discord invite link
+            // Redirect to the Discord server
+            window.location.href = 'https://discord.gg/ErmQQwzGjV';
         }
     </script>
 
