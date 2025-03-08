@@ -68,7 +68,7 @@
 </head>
 <body>
     <div class="button-container">
-        <button onclick="copyLoadstring()">Copy Loadstring</button>
+        <button onclick="openLoadstringPage()">Copy Loadstring</button>
         <button onclick="openSourcePage()">Open Source</button>
     </div>
 
@@ -82,28 +82,21 @@
     </div>
 
     <script>
-        // The loadstring code that gets copied when the "Copy Loadstring" button is clicked
-        const loadstringCode = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Looksymaly/Loadstring-for-noder/refs/heads/main/myloadstring.lua"))()';
-
-        function copyLoadstring() {
-            navigator.clipboard.writeText(loadstringCode).then(() => {
-                alert("Loadstring copied to clipboard!");
-            }).catch(err => {
-                console.error("Error copying text: ", err);
-            });
+        function openLoadstringPage() {
+            // Opens the Loadstring page
+            window.open('loadstringPage.html', '_blank');
         }
 
         function openSourcePage() {
-            // Open the source code page
-            window.open('loadstringpage.html', '_blank');
+            // Opens the source code page
+            window.open('sourcePage.html', '_blank');
         }
 
         function downloadSource() {
-            // Start the download of the source file
+            // Starts the download of the source file
             let sourceUrl = "https://raw.githubusercontent.com/Looksymaly/getnoder/main/Source.lua";
             window.location.href = sourceUrl; // This will prompt the user to download the file
         }
     </script>
-
 </body>
 </html>
