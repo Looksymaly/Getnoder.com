@@ -30,7 +30,7 @@
             left: 50%;
             transform: translate(-50%, -50%) rotate(5deg); /* Rotate the image by 5 degrees */
             animation: slideRight 5s ease-in-out infinite alternate;
-            z-index: 0;
+            z-index: 2; /* Ensure it is in front of the background */
         }
 
         @keyframes slideRight {
