@@ -20,6 +20,26 @@
             text-align: center;
             padding: 20px;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* Animation for the image */
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(5deg); /* Rotate the image by 5 degrees */
+            animation: slideRight 5s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translate(-50%, -50%) rotate(5deg) translateX(-30px);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(5deg) translateX(30px);
+            }
         }
 
         h1 {
@@ -27,6 +47,7 @@
             margin-bottom: 20px;
             font-weight: 900;
             animation: fadeIn 1s ease-in-out;
+            z-index: 1;
         }
 
         button {
@@ -41,6 +62,7 @@
             color: black;
             transition: 0.3s;
             box-shadow: 0 4px 10px rgba(255, 140, 0, 0.4);
+            z-index: 1;
         }
 
         button:hover {
@@ -54,31 +76,7 @@
             justify-content: center;
             gap: 10px;
             margin-bottom: 20px;
-        }
-
-        .image-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .image-container img {
-            width: 100px;
-            height: 100px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .image-container img:hover {
-            transform: rotate(5deg) scale(1.1);
-        }
-
-        .image-container span {
-            font-size: 20px;
-            font-weight: 700;
-            color: rgb(200, 200, 200);
+            z-index: 1;
         }
 
         #loadstring {
@@ -88,6 +86,7 @@
             margin-top: 20px;
             opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
+            z-index: 1;
         }
 
         @keyframes fadeIn {
@@ -99,10 +98,6 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 30px;
-            }
-            .image-container img {
-                width: 80px;
-                height: 80px;
             }
             .button-container {
                 flex-direction: column;
@@ -121,14 +116,9 @@
 
     <div id="loadstring">Noder 1.0 (Beta)</div>
 
+    <!-- Image container with the rotating image -->
     <div class="image-container">
-        <button onclick="learnMore()">Learn More!</button>
-        <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" />
-        <span>Discord</span>
-    </div>
-
-    <div class="action-buttons">
-        <button onclick="joinDiscord()">Join Discord</button>
+        <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" width="200" height="200" />
     </div>
 
     <script>
@@ -142,14 +132,6 @@
 
         function openCreditsPage() {
             window.location.href = 'https://nodercredits.netlify.app/';
-        }
-
-        function learnMore() {
-            window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
-        }
-
-        function joinDiscord() {
-            window.location.href = 'https://discord.gg/ErmQQwzGjV';
         }
     </script>
 </body>
