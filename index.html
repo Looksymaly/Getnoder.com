@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,130 +6,69 @@
     <title>Noder</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
-        
+
         body {
             background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
             font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
         }
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 20px;
-            font-weight: 900;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        button {
-            font-size: 18px;
-            font-weight: 700;
-            margin: 10px;
-            padding: 15px 30px;
-            border: none;
-            cursor: pointer;
-            border-radius: 12px;
-            background: #ff8c00;
-            color: black;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(255, 140, 0, 0.4);
-        }
-
-        button:hover {
-            background: #ff6a00;
-            transform: scale(1.1);
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background.jpg') no-repeat center center/cover;
+            z-index: -1;
         }
 
         .button-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             gap: 10px;
-            margin-bottom: 20px;
         }
 
-        .image-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .image-container img {
-            width: 100px;
-            height: 100px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .image-container img:hover {
-            transform: rotate(5deg) scale(1.1);
-        }
-
-        .image-container span {
-            font-size: 20px;
+        button {
+            font-size: 14px;
             font-weight: 700;
-            color: rgb(200, 200, 200);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            background: transparent;
+            color: white;
+            transition: 0.3s;
         }
 
-        #loadstring {
-            font-size: 22px;
-            font-weight: 700;
-            color: #b3b3b3;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
+        button:hover {
+            color: #ff8c00;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 30px;
-            }
-            .image-container img {
-                width: 80px;
-                height: 80px;
-            }
-            .button-container {
-                flex-direction: column;
-            }
+        h1 {
+            text-align: center;
+            margin-top: 20%;
+            font-size: 40px;
+            font-weight: 900;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Noder 1.0</h1>
+    <div id="background"></div>
 
     <div class="button-container">
         <button onclick="openLoadstringPage()">Copy Loadstring</button>
         <button onclick="openSourcePage()">Open Source</button>
         <button onclick="openCreditsPage()">Credits</button>
+        <button onclick="downloadFile()">Download</button>
     </div>
 
-    <div id="loadstring">Noder 1.0 (Beta)</div>
-
-    <div class="image-container">
-        <button onclick="learnMore()">Learn More!</button>
-        <img src="https://raw.githubusercontent.com/Looksymaly/Getnoder.xyz/main/Icon.png" alt="Icon" />
-        <span>Discord</span>
-    </div>
-
-    <div class="action-buttons">
-        <button onclick="joinDiscord()">Join Discord</button>
-    </div>
+    <h1>Welcome to Noder 1.0</h1>
 
     <script>
         function openLoadstringPage() {
@@ -145,12 +83,8 @@
             window.location.href = 'https://nodercredits.netlify.app/';
         }
 
-        function learnMore() {
-            window.location.href = 'https://learnmoreaboutnoder.netlify.app/';
-        }
-
-        function joinDiscord() {
-            window.location.href = 'https://discord.gg/ErmQQwzGjV';
+        function downloadFile() {
+            alert('Download function will be added soon!');
         }
     </script>
 </body>
